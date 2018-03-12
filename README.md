@@ -1,7 +1,5 @@
 # Chatbot_AB
 
-Personal project. 
- 
  Chatbot built with Program AB and AIML 2.0. 
  To run this project, simply load it into Eclipse (this is made in Neon) and run the file RunBot.
  

@@ -6,7 +6,7 @@ import org.alicebot.ab.Bot;
 import org.alicebot.ab.MagicBooleans;
 
 public class AddAiml {
-
+	
 	private static final boolean TRACE_MODE = false;
 	static String botName = "super";
 

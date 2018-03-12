@@ -1,53 +1,27 @@
 package bots;
+import java.util.Scanner;
 
-import java.io.File;
-
-import org.alicebot.ab.Bot;
-import org.alicebot.ab.Chat;
-import org.alicebot.ab.History;
-import org.alicebot.ab.MagicBooleans;
-import org.alicebot.ab.MagicStrings;
-import org.alicebot.ab.utils.IOUtils;
+/** mars 2018
+ * RunBot
+ * Simple program to start a bot and hold a conversation going.
+ * 
+ * @author allan
+ *
+ */
 
 public class RunBot {
 
-	
-	private static final boolean TRACE_MODE = false;
-	static String botName = "super";
-	String resourcesPath = getResourcesPath();
-	Bot bot; 
-	Chat chatSession;
-	
-	public RunBot(){
-		
-		if(bot == null){
-			
-			bot = new Bot("super", resourcesPath);;
+	public static void main(String[] args) {
+		// Create a new bot	
+		Chatbot bot = new Chatbot();
+		// For as long as the program runs, wait for new comment
+		// and print the reply
+		while(true){
+			System.out.print("Human : ");
+			Scanner scanner = new Scanner(System.in);
+			String sentence = scanner.next();
+			String response = bot.talkToBot(sentence);
+			System.out.println("Robot : " + response);
 		}
-		
-		chatSession = new Chat(bot);
-		
-		bot.brain.nodeStats();
-		
-	}
-	
-	public String talkToBot(String comment){
-		
-		String response = chatSession.multisentenceRespond(comment);
-		while (response.contains("&lt;"))
-			response = response.replace("&lt;", "<");
-		while (response.contains("&gt;"))
-			response = response.replace("&gt;", ">");
-		return response;
-		
-	}
-
-	private String getResourcesPath() {
-		File currDir = new File(".");
-		String path = currDir.getAbsolutePath();
-		path = path.substring(0, path.length() - 2);
-		System.out.println(path);
-		String resourcesPath = path + File.separator + "src" + File.separator;/*+ "main" + File.separator + "resources"*/
-		return resourcesPath;
 	}
 }

@@ -5,6 +5,17 @@ import java.io.File;
 import org.alicebot.ab.Bot;
 import org.alicebot.ab.MagicBooleans;
 
+/** mars 2018
+ * AddAiml program
+ * 
+ * Simple program for generating files from new XML's
+ * and load the new resources into the bot.
+ * 
+ * @author allan
+ *
+ */
+
+
 public class AddAiml {
 	
 	private static final boolean TRACE_MODE = false;

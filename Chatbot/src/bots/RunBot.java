@@ -19,6 +19,7 @@ public class RunBot {
 	Chat chatSession;
 	
 	public RunBot(){
+		
 		if(bot == null){
 			
 			bot = new Bot("super", resourcesPath);;
@@ -29,6 +30,7 @@ public class RunBot {
 		bot.brain.nodeStats();
 		
 	}
+	
 	public String talkToBot(String comment){
 		
 		String response = chatSession.multisentenceRespond(comment);
